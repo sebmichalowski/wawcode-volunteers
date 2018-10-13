@@ -40,12 +40,12 @@ public class EventRepositoryTest {
         eventRepository.save(event2);
     }
 
-    @Test
-    public void save_get(){
-        eventRepository.save(event);
-        eventRepository.save(event1);
-        eventRepository.save(event2);
-    }
+//    @Test
+//    public void save_get(){
+//        eventRepository.save(event);
+//        eventRepository.save(event1);
+//        eventRepository.save(event2);
+//    }
 
     @Test
     public void find_radius(){
