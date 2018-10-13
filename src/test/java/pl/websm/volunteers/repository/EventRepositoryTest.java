@@ -42,9 +42,9 @@ public class EventRepositoryTest {
 
     @Test
     public void save_get(){
-        eventRepository.save(event);
-        eventRepository.save(event1);
-        eventRepository.save(event2);
+//        eventRepository.save(event);
+//        eventRepository.save(event1);
+//        eventRepository.save(event2);
     }
 
     @Test

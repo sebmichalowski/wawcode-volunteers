@@ -4,9 +4,11 @@ import lombok.Data;
 import org.springframework.data.geo.Point;
 import org.springframework.data.redis.core.index.GeoIndexed;
 
+import java.io.Serializable;
+
 
 @Data
-public class Position {
+public class Position implements Serializable {
     @GeoIndexed
     private Point point;
 

@@ -9,6 +9,6 @@ import pl.websm.volunteers.model.Event;
 import java.util.Set;
 
 @Repository
-public interface EventRepository extends CrudRepository<Event, String> {
+public interface EventRepository extends CrudRepository<Event, String>, CustomRepository<Event, String> {
     Set<Event> findByPositionPointNear(Point point, Distance distance);
 }
