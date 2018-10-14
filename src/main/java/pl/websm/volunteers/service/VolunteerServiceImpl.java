@@ -2,6 +2,7 @@ package pl.websm.volunteers.service;
 
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.Point;
+import org.springframework.stereotype.Service;
 import pl.websm.volunteers.model.Event;
 import pl.websm.volunteers.model.Volunteer;
 import pl.websm.volunteers.repository.EventRepository;
@@ -10,6 +11,7 @@ import pl.websm.volunteers.repository.VolunteerRepository;
 import java.util.Optional;
 import java.util.Set;
 
+@Service
 public class VolunteerServiceImpl implements VolunteerService {
     private final EventRepository eventRepository;
     private final VolunteerRepository volunteerRepository;

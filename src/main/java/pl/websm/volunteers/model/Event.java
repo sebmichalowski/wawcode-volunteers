@@ -1,10 +1,12 @@
 package pl.websm.volunteers.model;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
 import java.time.LocalDateTime;
 
+@Data
 @RedisHash("event")
 public class Event {
     @Id

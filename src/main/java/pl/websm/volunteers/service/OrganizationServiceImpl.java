@@ -2,6 +2,7 @@ package pl.websm.volunteers.service;
 
 import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.Point;
+import org.springframework.stereotype.Service;
 import pl.websm.volunteers.model.AreaOfExpertise;
 import pl.websm.volunteers.model.Organization;
 import pl.websm.volunteers.model.Volunteer;
@@ -12,6 +13,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Service
 public class OrganizationServiceImpl implements OrganizationService {
     private final VolunteerRepository volunteerRepository;
     private final OrganizationRepository organizationRepository;
