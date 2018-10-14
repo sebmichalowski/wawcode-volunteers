@@ -4,8 +4,10 @@ import org.springframework.data.geo.Distance;
 import org.springframework.data.geo.Point;
 import org.springframework.stereotype.Service;
 import pl.websm.volunteers.model.AreaOfExpertise;
+import pl.websm.volunteers.model.Event;
 import pl.websm.volunteers.model.Organization;
 import pl.websm.volunteers.model.Volunteer;
+import pl.websm.volunteers.repository.EventRepository;
 import pl.websm.volunteers.repository.OrganizationRepository;
 import pl.websm.volunteers.repository.VolunteerRepository;
 
@@ -17,10 +19,12 @@ import java.util.stream.Collectors;
 public class OrganizationServiceImpl implements OrganizationService {
     private final VolunteerRepository volunteerRepository;
     private final OrganizationRepository organizationRepository;
+    private final EventRepository eventRepository;
 
-    public OrganizationServiceImpl(VolunteerRepository volunteerRepository, OrganizationRepository organizationRepository) {
+    public OrganizationServiceImpl(VolunteerRepository volunteerRepository, OrganizationRepository organizationRepository, EventRepository eventRepository) {
         this.volunteerRepository = volunteerRepository;
         this.organizationRepository = organizationRepository;
+        this.eventRepository = eventRepository;
     }
 
     @Override
@@ -39,6 +43,15 @@ public class OrganizationServiceImpl implements OrganizationService {
     @Override
     public Optional<Organization> getOrganization(String id) {
         return organizationRepository.findById(id);
+    }
+
+    @Override
+    public Optional<Event> addEvent(Event event) {
+        Event addedEvent = eventRepository.save(event);
+        if (addedEvent.getId().isEmpty()){
+            return Optional.empty();
+        }
+        return Optional.of(addedEvent);
     }
 
     private Set<Volunteer> findVolunteerWithinGivenRadius(Point point, Distance distance) {

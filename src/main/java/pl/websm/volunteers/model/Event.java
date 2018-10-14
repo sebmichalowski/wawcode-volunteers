@@ -13,13 +13,15 @@ public class Event {
     private String id;
     private LocalDateTime localDateTime;
     private Position position;
+    private String organization_id;
 
     public Event() {
 
     }
 
-    public Event(LocalDateTime localDateTime, Position position) {
+    public Event(LocalDateTime localDateTime, Position position, String organization_id) {
         this.localDateTime = localDateTime;
         this.position = position;
+        this.organization_id = organization_id;
     }
 }
