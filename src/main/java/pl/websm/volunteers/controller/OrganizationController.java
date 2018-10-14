@@ -26,8 +26,7 @@ public class OrganizationController {
 
     @RequestMapping(
             value = "api/{organizationId}/{areaOfExpertise}/org",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE)
+            method = RequestMethod.GET)
     public ResponseEntity<String> findVolunteerWithSpecificSkill(@PathVariable String organizationId,
                                                                  @PathVariable AreaOfExpertise areaOfExpertise) {
         Optional<Organization> organization = organizationService.getOrganization(organizationId);

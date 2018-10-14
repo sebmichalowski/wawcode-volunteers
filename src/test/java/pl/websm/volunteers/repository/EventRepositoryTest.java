@@ -49,6 +49,9 @@ public class EventRepositoryTest {
         Position position1 = new Position(13.131389338970184, 38.155556395496299);
         Position position2 = new Position(13.391389338970184, 38.145556395496299);
         Organization organization = new Organization();
+        organization.setName("Some org");
+        organization.setPosition(position);
+
 
         Organization organization1 = organizationRepository.save(organization);
         event = new Event(localDateTime, position, organization1.getId());
