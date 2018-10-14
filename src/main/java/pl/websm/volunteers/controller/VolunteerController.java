@@ -25,7 +25,7 @@ public class VolunteerController {
     }
 
     @RequestMapping(
-            value = "api/{userId}/{distanceInKm}",
+            value = "api/{userId}/{distanceInKm}/vol",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Set<Event>> getListOfEventsNearby(@PathVariable String userId,

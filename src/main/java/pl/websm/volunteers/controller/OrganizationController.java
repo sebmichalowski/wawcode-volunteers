@@ -23,7 +23,7 @@ public class OrganizationController {
 
 
     @RequestMapping(
-            value = "api/{organizationId}/{areaOfExpertise}",
+            value = "api/{organizationId}/{areaOfExpertise}/org",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> findVolunteerWithSpecificSkill(@PathVariable String organizationId,

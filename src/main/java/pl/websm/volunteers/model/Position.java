@@ -17,4 +17,8 @@ public class Position {
     public Position(Double latitude, Double longitude) {
         point = new Point(latitude, longitude);
     }
+
+    public Position(Point point) {
+        this.point = point;
+    }
 }
