@@ -11,4 +11,12 @@ public class Organization {
     private String id;
     private String name;
     private Position position;
+
+    public Organization(String name, Position position) {
+        this.name = name;
+        this.position = position;
+    }
+
+    public Organization() {
+    }
 }
