@@ -10,5 +10,6 @@ import java.util.Set;
 
 public interface VolunteerService {
     Set<Event> findNearbyEvents(Point point, Distance distance);
+
     Optional<Volunteer> getVolunteer(String id);
 }

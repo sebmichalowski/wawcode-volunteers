@@ -10,9 +10,10 @@ public class Position {
     @GeoIndexed
     private Point point;
 
-    public Position(){
+    public Position() {
 
     }
+
     public Position(Double latitude, Double longitude) {
         point = new Point(latitude, longitude);
     }

@@ -5,17 +5,17 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.geo.*;
+import org.springframework.data.geo.Distance;
+import org.springframework.data.geo.Point;
 import org.springframework.data.redis.connection.RedisGeoCommands;
 import org.springframework.test.context.junit4.SpringRunner;
 import pl.websm.volunteers.model.Event;
 import pl.websm.volunteers.model.Position;
 
-
-import javax.validation.constraints.AssertTrue;
 import java.time.LocalDateTime;
 import java.util.Set;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -26,6 +26,7 @@ public class EventRepositoryTest {
     private Event event;
     private Event event1;
     private Event event2;
+
     @Before
     public void setUp() throws Exception {
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -48,7 +49,7 @@ public class EventRepositoryTest {
 //    }
 
     @Test
-    public void find_radius(){
+    public void find_radius() {
         //when
         Point point = new Point(13D, 38D);
         Distance distance = new Distance(900000, RedisGeoCommands.DistanceUnit.KILOMETERS);

@@ -10,5 +10,6 @@ import java.util.Set;
 
 public interface OrganizationService {
     Set<Volunteer> findVolunteerByAreaOfExpertise(Point point, AreaOfExpertise areaOFExpertise);
+
     Optional<Organization> getOrganization(String id);
 }

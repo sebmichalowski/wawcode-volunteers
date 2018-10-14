@@ -1,7 +1,6 @@
 package pl.websm.volunteers.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.geo.Point;
 import org.springframework.data.redis.core.RedisHash;
 
 import java.time.LocalDateTime;
@@ -13,7 +12,7 @@ public class Event {
     private LocalDateTime localDateTime;
     private Position position;
 
-    public Event(){
+    public Event() {
 
     }
 
